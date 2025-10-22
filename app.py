@@ -305,7 +305,9 @@ else:
     
     st.markdown("""
 
-    🔗 Link for Close.com "📊 Goodfire Monthly Billing" smartview 👉 https://app.close.com/leads/save_QWhb7BxtrwOJXwVc9TPofaEME8o2JKr5lfyw4ce3vcC/
+    ### 🔗 Link
+    
+    Link for Close.com "📊 Goodfire Monthly Billing" smartview 👉 https://app.close.com/leads/save_QWhb7BxtrwOJXwVc9TPofaEME8o2JKr5lfyw4ce3vcC/
     
     ### 📖 How to Use
     
