@@ -311,6 +311,8 @@ else:
     3. **Configure**: Set company name, pricing, and billing period
     4. **Filter**: Select which leads to include in the invoice
     5. **Generate**: Click to create your PDF invoice
+    6. **Save**: Save the PDF in Box > Land > Goodfire > Invoices.
+    7. **Email**: Email the PDF to accounting@glo.land.
     
     ⚠️ **NOTE:** The "📊 Goodfire Monthly Billing" smartview in Close.com is set for "This Month" and intended to be run prior to the end of the current month. If this billing is generated at the beginning of the new month, you'll need to temporarily change the period in Close.com to "Last Month".
     
