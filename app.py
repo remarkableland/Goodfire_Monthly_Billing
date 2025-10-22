@@ -304,6 +304,9 @@ else:
     st.info("👆 Please upload your Close.com CSV export to begin")
     
     st.markdown("""
+
+    🔗 Link for Close.com "📊 Goodfire Monthly Billing" smartview 👉 https://app.close.com/leads/save_QWhb7BxtrwOJXwVc9TPofaEME8o2JKr5lfyw4ce3vcC/
+    
     ### 📖 How to Use
     
     1. **Export from Close.com**: Export the current month's listings using the "📊 Goodfire Monthly Billing" smartview. Export "All fields".
