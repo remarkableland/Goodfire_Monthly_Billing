@@ -312,7 +312,7 @@ else:
     4. **Filter**: Select which leads to include in the invoice
     5. **Generate**: Click to create your PDF invoice
     
-    ⚠️ **Note:** The "📊 Goodfire Monthly Billing" smartview is set for "This Month". If this billing is generated at the beginning of the new month, you'll need to temporarily change the period in Close to "Last Month".
+    ⚠️ **NOTE:** The "📊 Goodfire Monthly Billing" smartview in Close is set for "This Month" and intended to be run prior to the end of the current month. If this billing is generated at the beginning of the new month, you'll need to temporarily change the period in Close to "Last Month".
     
     ### 📋 Required CSV Columns
     
