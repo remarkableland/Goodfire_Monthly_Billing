@@ -306,7 +306,7 @@ else:
     st.markdown("""
     ### 📖 How to Use
     
-    1. **Export from Close.com**: Export the listings using the 📊 Goodfire Monthly Billing smartview. Export all fields.
+    1. **Export from Close.com**: Export the current month's listings using the "📊 Goodfire Monthly Billing" smartview. Export "All fields".
     2. **Upload CSV**: Use the file uploader above
     3. **Configure**: Set company name, pricing, and billing period
     4. **Filter**: Select which leads to include in the invoice
