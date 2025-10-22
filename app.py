@@ -312,6 +312,8 @@ else:
     4. **Filter**: Select which leads to include in the invoice
     5. **Generate**: Click to create your PDF invoice
     
+    ⚠️ **Note:** The "📊 Goodfire Monthly Billing" smartview is set for "This Month". If this billing is generated at the beginning of the new month, you'll need to temporarily change the period in Close to "Last Month".
+    
     ### 📋 Required CSV Columns
     
     The following columns should be in your Close.com export:
