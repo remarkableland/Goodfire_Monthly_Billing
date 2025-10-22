@@ -2,23 +2,25 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 from io import BytesIO
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import letter, landscape
 from reportlab.lib import colors
 from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_RIGHT
 
-st.set_page_config(page_title="Close.com Invoice Generator", page_icon="📄", layout="wide")
+st.set_page_config(page_title="Goodfire Invoice Generator", page_icon="📄", layout="wide")
 
-st.title("📄 Close.com Invoice Generator")
+st.title("📄 Goodfire Invoice Generator")
 st.markdown("Generate professional invoices from Close.com lead exports for MLS listings")
 
 # Function to generate invoice PDF
 def generate_invoice_pdf(filtered_df, billing_month, billing_year, company_name, price_per_listing):
     """Generate a PDF invoice from filtered lead data"""
     buffer = BytesIO()
-    doc = SimpleDocTemplate(buffer, pagesize=letter,
+    
+    # Use landscape orientation for more horizontal space
+    doc = SimpleDocTemplate(buffer, pagesize=landscape(letter),
                             topMargin=0.75*inch, bottomMargin=0.75*inch,
                             leftMargin=0.75*inch, rightMargin=0.75*inch)
     
@@ -94,8 +96,10 @@ def generate_invoice_pdf(filtered_df, billing_month, billing_year, company_name,
     # Calculate total
     total_amount = len(filtered_df) * price_per_listing
     
-    # Create table
-    col_widths = [1.0*inch, 1.2*inch, 3.5*inch, 1.0*inch]
+    # Create table with adjusted column widths for landscape orientation
+    # Landscape letter is 11" x 8.5", minus margins = ~9.5" width available
+    # Giving more space to Property column
+    col_widths = [1.0*inch, 1.2*inch, 6.0*inch, 1.3*inch]
     table = Table(table_data, colWidths=col_widths, repeatRows=1)
     
     # Style the table
@@ -129,13 +133,13 @@ def generate_invoice_pdf(filtered_df, billing_month, billing_year, company_name,
     story.append(table)
     story.append(Spacer(1, 0.5*inch))
     
-    # Total section
+    # Total section - adjusted for landscape width
     total_data = [
         ['Total', f'${total_amount:.2f}'],
         ['Billing Date', datetime.now().strftime('%-m/%-d/%Y')]
     ]
     
-    total_table = Table(total_data, colWidths=[5.7*inch, 1.0*inch])
+    total_table = Table(total_data, colWidths=[8.2*inch, 1.3*inch])
     total_table.setStyle(TableStyle([
         ('ALIGN', (0, 0), (0, -1), 'RIGHT'),
         ('ALIGN', (1, 0), (1, -1), 'RIGHT'),
@@ -302,7 +306,7 @@ else:
     st.markdown("""
     ### 📖 How to Use
     
-    1. **Export from Close.com**: Export your leads with MLS listing information
+    1. **Export from Close.com**: Export the listings using the 📊 Goodfire Monthly Billing smartview. Export all fields.
     2. **Upload CSV**: Use the file uploader above
     3. **Configure**: Set company name, pricing, and billing period
     4. **Filter**: Select which leads to include in the invoice
@@ -324,4 +328,5 @@ else:
     - Filter by listing date to generate monthly invoices automatically
     - Use status filters to include only active listings
     - The invoice format matches your standard Goodfire Realty billing format
+    - Landscape orientation provides more space for property names
     """)
